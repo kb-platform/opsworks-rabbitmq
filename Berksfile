@@ -1,5 +1,5 @@
-source "https://supermarket.getchef.com"
+source "https://supermarket.chef.io"
 
 metadata
-cookbook 'erlang', '>=0.9'
-cookbook 'rabbitmq', '~>2.4'
+cookbook 'erlang', '~>1.5.0'
+cookbook 'rabbitmq', '~>4.1.2'
