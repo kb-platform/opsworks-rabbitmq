@@ -31,5 +31,5 @@
 rabbitmq_layer = node['rabbitmq']['opsworks']['layer_name']
 
 instances = node[:opsworks][:layers][rabbitmq_layer][:instances]
-rabbitmq_cluster_nodes = instances.map{ |name, attrs| "rabbit@#{name}" }
-node.set['rabbitmq']['cluster_disk_nodes'] = rabbitmq_cluster_nodes
+rabbitmq_cluster_nodes = instances.map{ |name, attrs| {:name => "rabbit@#{name}", :type => 'ram'} }
+node.set['rabbitmq']['cluster_nodes'] = rabbitmq_cluster_nodes
